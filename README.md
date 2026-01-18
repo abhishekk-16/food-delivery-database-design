@@ -15,12 +15,12 @@ The project demonstrates strong fundamentals in relational database design and a
 
 ## 🗂 Project Structure
 
-
-schema/               → Core database tables and relationships
-advanced_features/    → Views, functions, procedures, triggers
-data/                 → Dummy data for testing
-queries/              → Business and analytical SQL queries
-
+| Folder | Description |
+|--------|------------------------------|
+| schema/ | Core database tables and relationships |
+| advanced_features/ | Views, functions, procedures, triggers |
+| data/ | Dummy data for testing |
+| queries/ | Business and analytical SQL queries |
 
 ---
 
