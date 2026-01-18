@@ -40,9 +40,9 @@ All tables are normalized and connected using primary and foreign key constraint
 
 Schema file:
 
-
+```
 schema/db_schema.sql
-
+```
 
 ---
 
@@ -57,9 +57,9 @@ This project implements real production-level features using:
 
 These are available in:
 
-
+```
 advanced_features/adv_features.sql
-
+```
 
 Examples:
 
@@ -73,9 +73,9 @@ Examples:
 
 Dummy data is provided to simulate real application usage:
 
-
+```
 data/dummy_data.sql
-
+```
 
 This allows anyone to recreate the database environment locally.
 
@@ -92,9 +92,9 @@ Business-oriented queries such as:
 
 Available in:
 
-
+```
 queries/food_delivery_sql_queries.sql
-
+```
 
 ---
 
@@ -102,15 +102,15 @@ queries/food_delivery_sql_queries.sql
 
 1. Create database:
 
-sql
+```sql
 CREATE DATABASE food_delivery_db;
-
+```
 
 2. Load schema:
 
-bash
+```bash
 psql -U postgres -d food_delivery_db -f schema/db_schema.sql
-
+```
 
 3. Load advanced features:
 
