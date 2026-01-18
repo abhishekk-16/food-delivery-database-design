@@ -1716,7 +1716,7 @@ END $$;
 -- END OF QUERIES
 -- ==========================================
 
--- Total: 50 SELECT Queries + 14 Procedure Examples = 64 Business-Oriented SQL Queries
+-- Total: 50 SELECT Queries + 14 Function and Procedure Examples = 64 Business-Oriented SQL Queries
 -- Database: PostgreSQL 12+
 -- Complexity: Basic to Expert Level
 -- Use Cases: Operations, Analytics, Finance, Marketing, Fraud Detection
