@@ -24,6 +24,12 @@ The project demonstrates strong fundamentals in relational database design and a
 
 ---
 
+## 📐 ER Diagram
+
+![ER Diagram](diagrams/er_diagram.png)
+
+---
+
 ## 🧱 Database Schema
 
 The schema includes:
