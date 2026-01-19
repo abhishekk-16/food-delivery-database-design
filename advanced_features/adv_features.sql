@@ -1090,17 +1090,30 @@ EXECUTE FUNCTION check_duplicate_primary_address();
 CREATE OR REPLACE FUNCTION log_order_status_change()
 RETURNS TRIGGER AS $$
 BEGIN
-    INSERT INTO order_status_audit_log (order_id, old_status, new_status)
-    VALUES (NEW.order_id, OLD.order_status, NEW.order_status);
-    
+    -- Log only if order status actually changes
+    IF OLD.order_status IS DISTINCT FROM NEW.order_status THEN
+        INSERT INTO order_status_audit_log (
+            order_id,
+            old_status,
+            new_status,
+            changed_at
+        )
+        VALUES (
+            OLD.order_id,
+            OLD.order_status,
+            NEW.order_status,
+            CURRENT_TIMESTAMP
+        );
+    END IF;
+
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_log_order_status_change
-AFTER UPDATE ON orders
+AFTER UPDATE OF order_status
+ON orders
 FOR EACH ROW
-WHEN (OLD.order_status IS DISTINCT FROM NEW.order_status)
 EXECUTE FUNCTION log_order_status_change();
 
 -- Trigger 8: Prevent Delivery Agent Assignment to Pending Orders
@@ -1165,7 +1178,7 @@ AFTER INSERT OR UPDATE ON reviews
 FOR EACH ROW
 EXECUTE FUNCTION update_agent_rating_on_review();
 
--- Trigger !0: Update order total
+-- Trigger 10: Update order total
 CREATE OR REPLACE FUNCTION update_order_total()
 RETURNS TRIGGER AS $$
 DECLARE
@@ -1238,3 +1251,5 @@ CREATE TRIGGER trg_update_order_total_on_delete_item
 AFTER DELETE ON order_items
 FOR EACH ROW 
 EXECUTE FUNCTION update_order_total();
+
+-- 11: Trigger function to log order status changes
