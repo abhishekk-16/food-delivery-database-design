@@ -28,21 +28,23 @@ The project demonstrates strong fundamentals in relational database design and a
 
 The schema includes:
 
-- customers
+- users
+- customer_addresses
 - restaurants
+- restaurant_addresses
 - menu_items
 - orders
 - order_items
-- delivery_partners
+- delivery_agents
+- deliveries
 - payments
+- reviews
 
 All tables are normalized and connected using primary and foreign key constraints.
 
 Schema file:
 
-```
-schema/db_schema.sql
-```
+[db_schema.sql](schema/db_schema.sql)
 
 ---
 
@@ -57,9 +59,7 @@ This project implements real production-level features using:
 
 These are available in:
 
-```
-advanced_features/adv_features.sql
-```
+[adv_features.sql](advanced_features/adv_features.sql)
 
 Examples:
 
@@ -73,9 +73,7 @@ Examples:
 
 Dummy data is provided to simulate real application usage:
 
-```
-data/dummy_data.sql
-```
+[dummy_data.sql](data/dummy_data.sql)
 
 This allows anyone to recreate the database environment locally.
 
@@ -92,9 +90,7 @@ Business-oriented queries such as:
 
 Available in:
 
-```
-queries/food_delivery_sql_queries.sql
-```
+[food_deliveries_sql_queries.sql](queries/food_delivery_sql_queries.sql)
 
 ---
 
@@ -108,22 +104,45 @@ CREATE DATABASE food_delivery_db;
 
 2. Load schema:
 
+<<<<<<< HEAD
 ```bash
 psql -U postgres -d food_delivery_db -f schema/db_schema.sql
 ```
 
+=======
+ * Linux/macos
+```bash
+psql -U postgres -d food_delivery_db -f schema/db_schema.sql
+```
+ 
+ * Windows
+```cmd
+ psql -U postgres -d food_delivery_db -f schema\db_schema.sql
+ ```
+>>>>>>> 7dd2c96 (Add clickable links to SQL files in README)
 3. Load advanced features:
 
-bash
+ * Linux/macos
+```bash
 psql -U postgres -d food_delivery_db -f advanced_features/adv_features.sql
+```
 
+ * Windows
+ ```cmd
+ psql -U postgres -d food_delivery_db -f advanced_features\adv_features.sql
+ ```
 
 4. Load sample data:
 
-bash
+ * Linux/macos
+```bash
 psql -U postgres -d food_delivery_db -f data/dummy_data.sql
+```
 
-
+ * Windows
+ ```cmd
+ psql -U postgres -d food_delivery_db -f data\dummy_data.sql
+```
 Now the database is fully ready for testing queries.
 
 ---
