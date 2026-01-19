@@ -104,12 +104,6 @@ CREATE DATABASE food_delivery_db;
 
 2. Load schema:
 
-<<<<<<< HEAD
-```bash
-psql -U postgres -d food_delivery_db -f schema/db_schema.sql
-```
-
-=======
  * Linux/macos
 ```bash
 psql -U postgres -d food_delivery_db -f schema/db_schema.sql
@@ -119,7 +113,7 @@ psql -U postgres -d food_delivery_db -f schema/db_schema.sql
 ```cmd
  psql -U postgres -d food_delivery_db -f schema\db_schema.sql
  ```
->>>>>>> 7dd2c96 (Add clickable links to SQL files in README)
+
 3. Load advanced features:
 
  * Linux/macos
