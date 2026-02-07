@@ -10,6 +10,7 @@ The project demonstrates strong fundamentals in relational database design and a
 ## 🛠 Tech Stack
 - PostgreSQL
 - SQL
+- Python
 
 ---
 
