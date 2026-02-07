@@ -77,9 +77,9 @@ Examples:
 
 ## 📊 Sample Data
 
-Dummy data is provided to simulate real application usage:
+Dummy data is generated to simulate real application usage.
+We are generating csv files with `Python` scripts and then copying them in our db.
 
-[dummy_data.sql](data/dummy_data.sql)
 
 This allows anyone to recreate the database environment locally.
 
@@ -102,47 +102,14 @@ Available in:
 
 ## ▶️ How to Run the Project Locally
 
-1. Create database:
+1. Create database
 
-```sql
-CREATE DATABASE food_delivery_db;
-```
+2. Load schema
 
-2. Load schema:
+3. Generate and Load sample data
 
- * Linux/macos
-```bash
-psql -U postgres -d food_delivery_db -f schema/db_schema.sql
-```
- 
- * Windows
-```cmd
- psql -U postgres -d food_delivery_db -f schema\db_schema.sql
- ```
+3. Load advanced features
 
-3. Load advanced features:
-
- * Linux/macos
-```bash
-psql -U postgres -d food_delivery_db -f advanced_features/adv_features.sql
-```
-
- * Windows
- ```cmd
- psql -U postgres -d food_delivery_db -f advanced_features\adv_features.sql
- ```
-
-4. Load sample data:
-
- * Linux/macos
-```bash
-psql -U postgres -d food_delivery_db -f data/dummy_data.sql
-```
-
- * Windows
- ```cmd
- psql -U postgres -d food_delivery_db -f data\dummy_data.sql
-```
 Now the database is fully ready for testing queries.
 
 ---
